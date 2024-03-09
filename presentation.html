@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-template-areas: 'leftside rightside';
+    }
+
+    #left {
+        /* border: 2px solid red; */
+        grid-area: leftside;
+        width: 64vw;
+        height: 100vh;
+    }
+
+    #sub_left {
+        /* border: 2px solid black; */
+        margin-top: 170px;
+    }
+
+    #left::before {
+        background: url("presentation-bgn.jpg")no-repeat center center/cover;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 64%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+    #left #heading1 {
+        text-align: center;
+        color: black;
+        font-size: 1.5rem;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    #left .para {
+        text-align: center;
+        color: black;
+        font-family: 'Bree Serif', serif;
+        padding: 0px 120px;
+    }
+
+    #right {
+        /* border: 2px solid green; */
+        grid-area: rightside;
+        position: absolute;
+        top: 0;
+        left: 63%;
+        background: white;
+        width: 36vw;
+        height: 100vh;
+    }
+
+    #sub_right {
+        /* border: 2px solid yellow; */
+        margin-top: 125px;
+    }
+
+    #right #heading2 {
+        color: black;
+        text-align: center;
+        font-family: 'Baloo Bhai 2', cursive;
+        font-size: 1.5rem;
+    }
+
+    #right form {
+        text-align: center;
+    }
+
+    #right .form-group input {
+        border-radius: 13px;
+        background-color: white;
+        width: 265px;
+    }
+
+    #right form input[type="text"],
+    form input[type="password"] {
+        font-family: 'Bree Serif', serif;
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+
+    #right .btn {
+        background-color: brown;
+        border: 2px solid white;
+        border-radius: 14px;
+        color: white;
+        width: 100px;
+        padding: 4px 14px;
+        margin: 16px;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+    #right .btn:hover {
+        background-color: rgb(219, 28, 28);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="left">
+            <div id="sub_left">
+                <div id="heading1">
+                    <h1>Welcome to Website</h1>
+                </div>
+                <div class="para">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam officia aliquam, error fuga
+                        aliquid
+                        voluptatum sunt expedita, ullam optio, ratione repellendus dolorum atque. Nostrum dignissimos
+                        beatae.</p>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="sub_right">
+                <div id="heading2">
+                    <h2>User Login</h2>
+                </div>
+                <form action="backend.php">
+                    <div class="form-group">
+                        <label for="userid"></label>
+                        <input type="text" name="myid" id="userid" placeholder="User id">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" name="mypassword" id="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <button class="btn">Login</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
